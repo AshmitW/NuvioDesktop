@@ -68,6 +68,7 @@ trap cleanup EXIT
 app_dir="$work_dir/Nuvio.AppDir"
 mkdir -p "$app_dir"
 cp -a "$app_root"/. "$app_dir/"
+bash "$script_dir/patch-jpackage-launcher.sh" "$app_dir"
 
 desktop_file="$app_dir/${NUVIO_LINUX_SHORTCUT_NAME}.desktop"
 nuvio_linux_write_desktop_entry_file "$desktop_file" "AppRun %u" "$NUVIO_LINUX_SHORTCUT_NAME"
